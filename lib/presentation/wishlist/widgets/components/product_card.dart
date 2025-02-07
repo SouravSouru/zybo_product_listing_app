@@ -59,21 +59,27 @@ class ProductCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Text(oldPrice,
-                            style: GoogleFonts.heebo(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                                decoration: TextDecoration.lineThrough,
-                                color: Colors.grey)),
-                        const SizedBox(width: 4),
-                        Text(newPrice,
-                            style: GoogleFonts.heebo(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.primaryColor)),
-                      ],
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: Text(oldPrice,
+                                style: GoogleFonts.heebo(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    decoration: TextDecoration.lineThrough,
+                                    color: Colors.grey)),
+                          ),
+                          const SizedBox(width: 4),
+                          Flexible(
+                            child: Text(newPrice,
+                                style: GoogleFonts.heebo(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.primaryColor)),
+                          ),
+                        ],
+                      ),
                     ),
                     Row(
                       children: [

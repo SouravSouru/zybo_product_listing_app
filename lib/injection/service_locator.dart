@@ -1,5 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:zybo_machine_test/data/datasources/home/home_datasource.dart';
+
+import '../data/repository/home_repository_impl.dart';
+import '../domain/repository/home_repository.dart';
 
 GetIt locator = GetIt.instance;
 
@@ -11,10 +15,9 @@ Future<void> setupLocator() async {
   // locator.registerFactory(() => AddCaseBloc(locator()));
 
   // Repository Register
-  // locator.registerLazySingleton<AppConfigRepository>(
-  //     () => AppConfigRepositoryImpl(locator()));
+    locator.registerLazySingleton<HomeRepository>(
+      () => HomeRepositoryImpl(locator()));
 
   // Data source Register
-  // locator
-  //     .registerSingleton<AppConfigDataSource>(AppConfigDataSource(locator()));
+  locator.registerSingleton<HomeDataSource>(HomeDataSource(locator()));
 }

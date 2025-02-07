@@ -20,9 +20,9 @@ class _ApiService implements ApiService {
 // Define your ApiClient
 class ApiClient {
   static ApiService buildClient() {
-    final dio = locator<Dio>(); // You can customize Dio instance if needed
+    final dio = locator<Dio>();
 
-    dio.options.baseUrl = '';
+    dio.options.baseUrl = 'https://admin.kushinirestaurant.com/api/';
     dio.options.headers = {
       // if (getUserData()?.authToken.isNotEmpty ?? false)
       //   'Authorization': "Bearer ${getUserData()?.authToken ?? ""}",

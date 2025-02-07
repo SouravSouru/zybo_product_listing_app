@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:zybo_machine_test/presentation/home/widgets/components/search_bar.dart';
-
-import '../../wishlist/widgets/components/product_card.dart';
 import 'components/banner_slider.dart';
 import 'components/latest_product_section.dart';
 import 'components/popular_product_section.dart';

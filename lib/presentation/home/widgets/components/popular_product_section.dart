@@ -1,7 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:zybo_machine_test/data/models/product_model/product.dart';
+import '../../../../bloc/bloc/homebloc_bloc.dart';
 import '../../../wishlist/widgets/components/product_card.dart';
 
 class PopularProductSection extends StatelessWidget {
@@ -29,22 +31,29 @@ class PopularProductSection extends StatelessWidget {
 
         // Popular Product Grid
 
-        AlignedGridView.count(
-          physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 24,
-          crossAxisCount: 2,
-          itemCount: 10,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            return const ProductCard(
-              imageUrl:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNU62jLjaRJ2XvCKDbaXhrVbvO5nO9n5cvA&s",
-              title: "Grain Peppers",
-              oldPrice: "₹800",
-              newPrice: "₹599",
-              rating: 4.5,
+        BlocBuilder<HomeblocBloc, HomeblocState>(
+          builder: (context, state) {
+            if (state.isLoading) {
+              return const CircularProgressIndicator();
+            }
+            return AlignedGridView.count(
+              physics: const ClampingScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 24,
+              crossAxisCount: 2,
+              itemCount: state.productsList?.length ?? 0,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                final ProductModel? product = state.productsList?[index];
+                return ProductCard(
+                  imageUrl: product?.featuredImage ?? "",
+                  title: product?.name ?? "N/A",
+                  oldPrice: "₹${product?.mrp ?? 0}",
+                  newPrice: "₹${product?.salePrice ?? 0}",
+                  rating: product?.avgRating?.toDouble() ?? 0.0,
+                );
+              },
             );
           },
         ),

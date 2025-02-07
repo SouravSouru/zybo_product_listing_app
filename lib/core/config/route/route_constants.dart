@@ -8,8 +8,8 @@ class Routes {
   // ----------------------------------------------------
 
   static String getSplashRoute() => splash;
-  static String getOtpVerificationRoute() =>"/$otp";
-  static String getRegistrationRoute() =>"/$registration";
+  static String getOtpVerificationRoute() => "/$otp";
+  static String getRegistrationRoute() => "/$registration";
   static String getLoginRoute() => "/$login";
   static String getMainRoute() => "/$main";
 }

@@ -17,8 +17,7 @@ class OtpInputFileds extends StatelessWidget {
           width: 76,
           height: 58,
           margin: const EdgeInsets.only(left: 16),
-          textStyle:
-              const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           decoration: BoxDecoration(
             color: const Color(0xFFF6F6F6),
             borderRadius: BorderRadius.circular(12),
