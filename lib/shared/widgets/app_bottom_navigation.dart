@@ -14,33 +14,28 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: ClipRRect(
-        
+      margin: const EdgeInsets.symmetric(
+        horizontal: 16,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(30),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          // margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 10,
-                spreadRadius: 2,
-                offset: const Offset(0, 3),
-              ),
-            ],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            spreadRadius: 2,
+            offset: const Offset(0, 3),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: List.generate(3, (index) {
-              return _buildNavItem(index);
-            }),
-          ),
-        ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: List.generate(3, (index) {
+          return _buildNavItem(index);
+        }),
       ),
     );
   }
@@ -67,7 +62,7 @@ class CustomBottomNavBar extends StatelessWidget {
         child: Row(
           children: [
             SvgPicture.asset(icons[index],
-                height: 25, color: isSelected ? Colors.white : Colors.grey),
+                height: 22, color: isSelected ? Colors.white : Colors.grey),
             if (isSelected)
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),

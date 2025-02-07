@@ -23,7 +23,11 @@ class MainScreen extends StatelessWidget {
     return BlocBuilder<BottomNavigationBloc, BottomNavigationState>(
       builder: (context, state) {
         return Scaffold(
-          bottomNavigationBar: CustomBottomNavBar(
+          extendBody: true,
+          resizeToAvoidBottomInset: false,
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: CustomBottomNavBar(
             selectedIndex: state.selectedIndex,
             onItemSelected: (index) {
               context
