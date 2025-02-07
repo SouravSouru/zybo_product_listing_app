@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-            import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
-import 'package:zybo_machine_test/shared/widgets/app_elevated_button.dart'; 
+import 'package:zybo_machine_test/core/config/route/route_constants.dart';
+import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
+import 'package:zybo_machine_test/shared/widgets/app_elevated_button.dart';
 import '../../../../shared/widgets/app_back_button.dart';
 import 'components/otp_input_fields.dart';
 
@@ -112,7 +114,11 @@ class OTPVerificationWidget extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Submit Button
-          AppElevatedButton(text: "Submit", onPressed: () {})
+          AppElevatedButton(
+              text: "Submit",
+              onPressed: () {
+                context.push(Routes.getRegistrationRoute());
+              })
         ],
       ),
     );

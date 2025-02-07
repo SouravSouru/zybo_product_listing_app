@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zybo_machine_test/presentation/auth/login/login_screen.dart';
 import 'package:zybo_machine_test/presentation/auth/otp%20verification/otp_verification_screen.dart';
-import 'package:zybo_machine_test/presentation/auth/otp%20verification/widgets/otp_widget.dart';
+import 'package:zybo_machine_test/presentation/auth/registration/registration_screen.dart';
 import 'package:zybo_machine_test/presentation/main/main_screen.dart';
-
 import '../../../presentation/splash/splash_screen.dart';
 import 'route_constants.dart';
 import 'transition.dart';
@@ -32,6 +31,12 @@ final GoRouter router = GoRouter(
       path: Routes.getOtpVerificationRoute(),
       pageBuilder: (context, state) =>
           buildPageWithFadeTransition(const OTPVerificationScreen(), state),
+    ),
+    GoRoute(
+      name: Routes.registration,
+      path: Routes.getRegistrationRoute(),
+      pageBuilder: (context, state) =>
+          buildPageWithFadeTransition(const RegistrationScreen(), state),
     ),
     GoRoute(
       name: Routes.main,
