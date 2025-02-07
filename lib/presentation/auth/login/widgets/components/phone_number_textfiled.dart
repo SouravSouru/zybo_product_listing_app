@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 class PhoneNumberTextField extends StatelessWidget {
   const PhoneNumberTextField({
@@ -7,23 +9,30 @@ class PhoneNumberTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         SizedBox(
           width: 50,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextField(
               keyboardType: TextInputType.phone,
               readOnly: true,
               decoration: InputDecoration(
                 hintText: " +91",
-                hintStyle: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
+                enabledBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.black.withOpacity(.10))),
+                focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.black.withOpacity(.10))),
+                hintStyle: GoogleFonts.oxygen(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey),
                 border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey)),
+                    borderSide:
+                        BorderSide(color: Colors.black.withOpacity(.10))),
               ),
             ),
           ),
@@ -33,14 +42,16 @@ class PhoneNumberTextField extends StatelessWidget {
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
               hintText: "Enter Phone",
+              enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.10))),
               focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey)),
-              hintStyle: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ),
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.10))),
+              hintStyle: GoogleFonts.oxygen(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.grey),
               border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey)),
+                  borderSide: BorderSide(color: Colors.black.withOpacity(.10))),
             ),
           ),
         ),

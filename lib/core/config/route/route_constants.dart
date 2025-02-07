@@ -1,15 +1,13 @@
 class Routes {
   static String splash = "/";
-  static String home = "home";
   static String main = "main";
   static String login = "login";
-  
-  
+  static String otp = "otp";
+
   // ----------------------------------------------------
-  
+
   static String getSplashRoute() => splash;
-  static String getHomeRoute() => "/$home";  
+  static String getOtpVerificationRoute() =>"/$otp";
   static String getLoginRoute() => "/$login";
-  static String getMainRoute() => "/$main";  
-  
+  static String getMainRoute() => "/$main";
 }

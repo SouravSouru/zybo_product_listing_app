@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 import '../../../../core/config/route/route_constants.dart';
 import '../../../../shared/widgets/app_elevated_button.dart';
@@ -18,19 +20,22 @@ class LoginWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 100,
+            height: 135,
           ),
-          const Text(
+          Text(
             "Login",
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
+            style: GoogleFonts.oxygen(
+                fontSize: 35,
+                fontWeight: FontWeight.w700,
+                color: AppColors.black),
           ),
-          const SizedBox(height: 8),
-          const Text(
+          const SizedBox(height: 10),
+          Text(
             "Let's Connect with Lorem Ipsum..!",
-            style: TextStyle(fontSize: 16, color: Colors.grey),
+            style: GoogleFonts.manrope(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.grey),
           ),
           const SizedBox(height: 40),
           const PhoneNumberTextField(),
@@ -38,41 +43,44 @@ class LoginWidget extends StatelessWidget {
           AppElevatedButton(
             text: "Continue",
             onPressed: () {
-              context.go(Routes.getMainRoute());
+              context.go(Routes.getOtpVerificationRoute());
             },
           ),
           const SizedBox(height: 16),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 60.0),
             child: Center(
               child: Text.rich(
                 TextSpan(
                   text: "By Continuing you accept the ",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  style: GoogleFonts.oxygen(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w300,
+                      color: AppColors.black),
                   children: [
                     TextSpan(
                       text: "Terms of Use",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                      ),
+                      style: GoogleFonts.oxygen(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
+                          color: AppColors.black),
                     ),
                     TextSpan(
                       text: " & ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                      ),
+                      style: GoogleFonts.oxygen(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
+                          color: AppColors.black),
                     ),
                     TextSpan(
                       text: "Privacy Policy",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                      ),
+                      style: GoogleFonts.oxygen(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          decoration: TextDecoration.underline,
+                          color: AppColors.black),
                     ),
                   ],
                 ),
