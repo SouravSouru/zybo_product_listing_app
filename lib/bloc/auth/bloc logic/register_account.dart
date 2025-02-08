@@ -30,9 +30,6 @@ extension RegisterAccountLogic on AuthBloc {
           name: AuthenticationControllers.name.text);
 
       if (datastate is DataSuccess) {
-        emit(state.copyWith(
-          registerResponse: datastate.data,
-        ));
         // storing auth token to hive
         await HiveDatabaseService.saveAuthToken(
             state.registerResponse?.token?.access ?? "");
@@ -44,6 +41,11 @@ extension RegisterAccountLogic on AuthBloc {
           'Authorization': "Bearer ${HiveDatabaseService.getAuthToken()}",
         };
         AuthenticationControllers.clear();
+        emit(state.copyWith(
+            registerResponse: datastate.data,
+            loadingButtons: LoadingButtons.none,
+            errorMessage: null));
+        return;
       } else {
         errorMessage = 'someting went wrong';
       }

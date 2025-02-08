@@ -11,13 +11,10 @@ class OTPVerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => locator.get<AuthBloc>(),
-      child: Scaffold(
-        backgroundColor: AppColors.white,
-        body: const SafeArea(
-          child: OTPVerificationWidget(),
-        ),
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      body: const SafeArea(
+        child: OTPVerificationWidget(),
       ),
     );
   }

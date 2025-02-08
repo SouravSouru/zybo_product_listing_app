@@ -20,7 +20,7 @@ class LoginWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
-        if (state.loginResponse?.otp != null) {
+        if (state.loginResponse?.otp != null && state.errorMessage == null) {
           context.push(Routes.getOtpVerificationRoute());
         }
         if (state.errorMessage != null) {

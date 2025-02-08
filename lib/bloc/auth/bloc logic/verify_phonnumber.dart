@@ -21,17 +21,19 @@ extension VerifyPhonenumberLogic on AuthBloc {
       emit(state.copyWith(errorMessage: null));
       return;
     }
+    emit(state.copyWith(
+        isLoading: true, loadingButtons: LoadingButtons.verifyPhone));
     try {
       final datastate = await locator
           .get<AuthenticationRepository>()
           .verifyPhoneNumber(
               number: AuthenticationControllers.phoneNumber.text);
-      emit(state.copyWith(isLoading: true,loadingButtons: LoadingButtons.verifyPhone));
 
       if (datastate is DataSuccess) {
         emit(state.copyWith(
-          loginResponse: datastate.data,
-        ));
+            loginResponse: datastate.data,
+            loadingButtons: LoadingButtons.none));
+        return;
       } else {
         errorMessage = 'someting went wrong';
       }
@@ -39,7 +41,10 @@ extension VerifyPhonenumberLogic on AuthBloc {
       errorMessage = 'someting went wrong';
     }
 
-    emit(state.copyWith(errorMessage: errorMessage, isLoading: false,loadingButtons: LoadingButtons.none));
+    emit(state.copyWith(
+        errorMessage: errorMessage,
+        isLoading: false,
+        loadingButtons: LoadingButtons.none));
     emit(state.copyWith(errorMessage: null));
   }
 }

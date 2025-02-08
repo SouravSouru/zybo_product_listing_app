@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:toastification/toastification.dart';
+import 'package:zybo_machine_test/bloc/auth/auth_bloc.dart';
 import 'package:zybo_machine_test/bloc/bottom%20navigation/bottom_navigation_bloc.dart';
 import 'package:zybo_machine_test/core/network/api_client.dart';
 
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => BottomNavigationBloc(),
+          ),
+          BlocProvider(
+            create: (context) => AuthBloc(),
           ),
           BlocProvider(
           create: (context) =>locator.get<HomeblocBloc>()
