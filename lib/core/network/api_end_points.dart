@@ -7,4 +7,5 @@ class ApiEndPoints {
   static const register = 'login-register/';
   static const profile = 'user-data/';
   static const wishlist = 'wishlist/';
+  static const updateWishlist = 'add-remove-wishlist/';
 }

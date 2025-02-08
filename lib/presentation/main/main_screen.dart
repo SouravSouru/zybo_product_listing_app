@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zybo_machine_test/bloc/home/homebloc_bloc.dart';
 import 'package:zybo_machine_test/bloc/wishlist/wishlist_bloc.dart';
+import 'package:zybo_machine_test/injection/service_locator.dart';
 import '../../bloc/bottom navigation/bottom_navigation_bloc.dart';
 import '../../bloc/profile/profile_bloc.dart';
 import '../../shared/widgets/app_bottom_navigation.dart';
@@ -24,14 +25,14 @@ class MainScreen extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              WishlistBloc()..add(const WishlistEvent.fetchWishLists()),
+              locator.get<WishlistBloc>()..add(const WishlistEvent.fetchWishLists()),
         ),
         BlocProvider(
           create: (context) =>
               ProfileBloc()..add(const ProfileEvent.fetchProfile()),
         ),
         BlocProvider(
-          create: (context) => HomeblocBloc()
+          create: (context) =>locator.get<HomeblocBloc>()
             ..add(const HomeblocEvent.fetchProductsData())
             ..add(const HomeblocEvent.fetchBannersData()),
         ),

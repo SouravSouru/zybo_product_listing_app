@@ -56,11 +56,7 @@ class PopularProductSection extends StatelessWidget {
               itemBuilder: (context, index) {
                 final ProductModel? product = state.productsList?[index];
                 return ProductCard(
-                  imageUrl: product?.featuredImage ?? "",
-                  title: product?.name ?? "N/A",
-                  oldPrice: "₹${product?.mrp ?? 0}",
-                  newPrice: "₹${product?.salePrice ?? 0}",
-                  rating: product?.avgRating?.toDouble() ?? 0.0,
+                  productDetails: product,
                 );
               },
             );

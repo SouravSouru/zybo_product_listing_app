@@ -1,24 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/bloc/wishlist/wishlist_bloc.dart';
 import 'package:zybo_machine_test/core/generated/generated_assets.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
+import 'package:zybo_machine_test/data/models/product_model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String oldPrice;
-  final String newPrice;
-  final double rating;
+  final ProductModel? productDetails;
 
   const ProductCard({
     super.key,
-    required this.imageUrl,
-    required this.title,
-    required this.oldPrice,
-    required this.newPrice,
-    required this.rating,
+    required this.productDetails,
   });
 
   @override
@@ -35,7 +30,10 @@ class ProductCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
                 child: CachedNetworkImage(
-                  imageUrl: imageUrl,
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  imageUrl: productDetails?.featuredImage ?? "",
                   height: 176,
                   fit: BoxFit.cover,
                 ),
@@ -43,10 +41,19 @@ class ProductCard extends StatelessWidget {
               Positioned(
                 top: 8,
                 right: 8,
-                child: SvgPicture.asset(
-                  Assets.assetsSvgsFavicon,
-                  height: 24,
-                  width: 24,
+                child: InkWell(
+                  onTap: () {
+                    context.read<WishlistBloc>().add(
+                        WishlistEvent.updateWishlist(
+                            productId: "${productDetails?.id ?? 0}"));
+                  },
+                  child: SvgPicture.asset(
+                    (productDetails?.inWishlist ?? false)
+                        ? Assets.assetsSvgsFavicon
+                        : Assets.assetsSvgsLike,
+                    height: 24,
+                    width: 24,
+                  ),
                 ),
               ),
             ],
@@ -63,7 +70,7 @@ class ProductCard extends StatelessWidget {
                       child: Row(
                         children: [
                           Flexible(
-                            child: Text(oldPrice,
+                            child: Text("₹${productDetails?.mrp ?? 0}",
                                 style: GoogleFonts.heebo(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
@@ -72,7 +79,7 @@ class ProductCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 4),
                           Flexible(
-                            child: Text(newPrice,
+                            child: Text("₹${productDetails?.salePrice ?? 0}",
                                 style: GoogleFonts.heebo(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
@@ -84,7 +91,7 @@ class ProductCard extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.orange, size: 20),
-                        Text("$rating",
+                        Text("${productDetails?.avgRating}",
                             style: GoogleFonts.heebo(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
@@ -94,7 +101,7 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 4),
-                Text(title,
+                Text(productDetails?.name ?? "N/A",
                     style: GoogleFonts.heebo(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,

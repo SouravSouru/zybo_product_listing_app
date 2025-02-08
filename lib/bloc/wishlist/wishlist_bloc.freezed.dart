@@ -19,32 +19,38 @@ mixin _$WishlistEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchWishLists,
+    required TResult Function(String productId) updateWishlist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchWishLists,
+    TResult? Function(String productId)? updateWishlist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchWishLists,
+    TResult Function(String productId)? updateWishlist,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchWishList value) fetchWishLists,
+    required TResult Function(FetchWishList value) fetchWishLists,
+    required TResult Function(UpdateWishlist value) updateWishlist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FetchWishList value)? fetchWishLists,
+    TResult? Function(FetchWishList value)? fetchWishLists,
+    TResult? Function(UpdateWishlist value)? updateWishlist,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchWishList value)? fetchWishLists,
+    TResult Function(FetchWishList value)? fetchWishLists,
+    TResult Function(UpdateWishlist value)? updateWishlist,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,7 +98,7 @@ class __$$FetchWishListImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchWishListImpl implements _FetchWishList {
+class _$FetchWishListImpl implements FetchWishList {
   const _$FetchWishListImpl();
 
   @override
@@ -113,6 +119,7 @@ class _$FetchWishListImpl implements _FetchWishList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchWishLists,
+    required TResult Function(String productId) updateWishlist,
   }) {
     return fetchWishLists();
   }
@@ -121,6 +128,7 @@ class _$FetchWishListImpl implements _FetchWishList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchWishLists,
+    TResult? Function(String productId)? updateWishlist,
   }) {
     return fetchWishLists?.call();
   }
@@ -129,6 +137,7 @@ class _$FetchWishListImpl implements _FetchWishList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchWishLists,
+    TResult Function(String productId)? updateWishlist,
     required TResult orElse(),
   }) {
     if (fetchWishLists != null) {
@@ -140,7 +149,8 @@ class _$FetchWishListImpl implements _FetchWishList {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchWishList value) fetchWishLists,
+    required TResult Function(FetchWishList value) fetchWishLists,
+    required TResult Function(UpdateWishlist value) updateWishlist,
   }) {
     return fetchWishLists(this);
   }
@@ -148,7 +158,8 @@ class _$FetchWishListImpl implements _FetchWishList {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FetchWishList value)? fetchWishLists,
+    TResult? Function(FetchWishList value)? fetchWishLists,
+    TResult? Function(UpdateWishlist value)? updateWishlist,
   }) {
     return fetchWishLists?.call(this);
   }
@@ -156,7 +167,8 @@ class _$FetchWishListImpl implements _FetchWishList {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchWishList value)? fetchWishLists,
+    TResult Function(FetchWishList value)? fetchWishLists,
+    TResult Function(UpdateWishlist value)? updateWishlist,
     required TResult orElse(),
   }) {
     if (fetchWishLists != null) {
@@ -166,8 +178,151 @@ class _$FetchWishListImpl implements _FetchWishList {
   }
 }
 
-abstract class _FetchWishList implements WishlistEvent {
-  const factory _FetchWishList() = _$FetchWishListImpl;
+abstract class FetchWishList implements WishlistEvent {
+  const factory FetchWishList() = _$FetchWishListImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateWishlistImplCopyWith<$Res> {
+  factory _$$UpdateWishlistImplCopyWith(_$UpdateWishlistImpl value,
+          $Res Function(_$UpdateWishlistImpl) then) =
+      __$$UpdateWishlistImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String productId});
+}
+
+/// @nodoc
+class __$$UpdateWishlistImplCopyWithImpl<$Res>
+    extends _$WishlistEventCopyWithImpl<$Res, _$UpdateWishlistImpl>
+    implements _$$UpdateWishlistImplCopyWith<$Res> {
+  __$$UpdateWishlistImplCopyWithImpl(
+      _$UpdateWishlistImpl _value, $Res Function(_$UpdateWishlistImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of WishlistEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+  }) {
+    return _then(_$UpdateWishlistImpl(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateWishlistImpl implements UpdateWishlist {
+  const _$UpdateWishlistImpl({required this.productId});
+
+  @override
+  final String productId;
+
+  @override
+  String toString() {
+    return 'WishlistEvent.updateWishlist(productId: $productId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateWishlistImpl &&
+            (identical(other.productId, productId) ||
+                other.productId == productId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productId);
+
+  /// Create a copy of WishlistEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateWishlistImplCopyWith<_$UpdateWishlistImpl> get copyWith =>
+      __$$UpdateWishlistImplCopyWithImpl<_$UpdateWishlistImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchWishLists,
+    required TResult Function(String productId) updateWishlist,
+  }) {
+    return updateWishlist(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchWishLists,
+    TResult? Function(String productId)? updateWishlist,
+  }) {
+    return updateWishlist?.call(productId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchWishLists,
+    TResult Function(String productId)? updateWishlist,
+    required TResult orElse(),
+  }) {
+    if (updateWishlist != null) {
+      return updateWishlist(productId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchWishList value) fetchWishLists,
+    required TResult Function(UpdateWishlist value) updateWishlist,
+  }) {
+    return updateWishlist(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchWishList value)? fetchWishLists,
+    TResult? Function(UpdateWishlist value)? updateWishlist,
+  }) {
+    return updateWishlist?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchWishList value)? fetchWishLists,
+    TResult Function(UpdateWishlist value)? updateWishlist,
+    required TResult orElse(),
+  }) {
+    if (updateWishlist != null) {
+      return updateWishlist(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateWishlist implements WishlistEvent {
+  const factory UpdateWishlist({required final String productId}) =
+      _$UpdateWishlistImpl;
+
+  String get productId;
+
+  /// Create a copy of WishlistEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateWishlistImplCopyWith<_$UpdateWishlistImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

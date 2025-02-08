@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:zybo_machine_test/bloc/auth/auth_bloc.dart';
+import 'package:zybo_machine_test/bloc/home/homebloc_bloc.dart';
+import 'package:zybo_machine_test/bloc/wishlist/wishlist_bloc.dart';
 import 'package:zybo_machine_test/data/datasources/auth/authentication_datasource.dart';
 import 'package:zybo_machine_test/data/datasources/home/home_datasource.dart';
 import 'package:zybo_machine_test/data/datasources/profile/profile_datasource.dart';
@@ -23,6 +25,8 @@ Future<void> setupLocator() async {
 
   //Bloc Register
   locator.registerLazySingleton(() => AuthBloc());
+  locator.registerLazySingleton(() => HomeblocBloc());
+  locator.registerLazySingleton(() => WishlistBloc());
 
   // Repository Register
   locator.registerLazySingleton<HomeRepository>(

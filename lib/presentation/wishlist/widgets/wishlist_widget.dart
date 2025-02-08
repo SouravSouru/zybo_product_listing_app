@@ -64,16 +64,12 @@ class WishlistWidget extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 24,
                 crossAxisCount: 2,
-                itemCount: 20,
+                itemCount: state.wishlists.length,
                 itemBuilder: (context, index) {
                   final List<ProductModel> products = state.wishlists ?? [];
                   final ProductModel? product = products[index];
                   return ProductCard(
-                    imageUrl: product?.featuredImage ?? "",
-                    title: product?.name ?? "N/A",
-                    oldPrice: "₹${product?.mrp ?? 0}",
-                    newPrice: "₹${product?.salePrice ?? 0}",
-                    rating: product?.avgRating?.toDouble() ?? 0.0,
+                    productDetails: product,
                   );
                 },
               ),

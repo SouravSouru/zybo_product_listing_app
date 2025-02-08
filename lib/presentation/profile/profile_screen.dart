@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 import 'widgets/profile_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -6,8 +7,9 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: ProfileWidget()),
+    return Scaffold(
+      backgroundColor: AppColors.white,
+      body: const SafeArea(child: ProfileWidget()),
     );
   }
 }

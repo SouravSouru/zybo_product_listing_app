@@ -21,7 +21,7 @@ class HomeblocBloc extends Bloc<HomeblocEvent, HomeblocState> {
 
   FutureOr<void> fetchProductsData(
       HomeblocEvent event, Emitter<HomeblocState> emit) async {
-    emit(state.copyWith(isProductsListLoading: true, isError: false));
+    emit(state.copyWith(isError: false));
     var homeDataState = await locator<HomeRepository>().getProductsList();
     if (homeDataState is DataSuccess) {
       emit(state.copyWith(
