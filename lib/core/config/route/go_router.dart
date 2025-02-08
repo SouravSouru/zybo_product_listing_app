@@ -4,6 +4,7 @@ import 'package:zybo_machine_test/presentation/auth/login/login_screen.dart';
 import 'package:zybo_machine_test/presentation/auth/otp%20verification/otp_verification_screen.dart';
 import 'package:zybo_machine_test/presentation/auth/registration/registration_screen.dart';
 import 'package:zybo_machine_test/presentation/main/main_screen.dart';
+import 'package:zybo_machine_test/presentation/search/search_screen.dart';
 import '../../../presentation/splash/splash_screen.dart';
 import 'route_constants.dart';
 import 'transition.dart';
@@ -43,6 +44,12 @@ final GoRouter router = GoRouter(
       path: Routes.getMainRoute(),
       pageBuilder: (context, state) =>
           buildPageWithFadeTransition(const MainScreen(), state),
+    ),
+    GoRoute(
+      name: Routes.search,
+      path: Routes.getSearchRoute(),
+      pageBuilder: (context, state) =>
+          buildPageWithFadeTransition(const SearchScreen(), state),
     ),
   ],
   errorBuilder: (context, state) => const Scaffold(

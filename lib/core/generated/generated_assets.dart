@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
+  
+  /// Assets for assetsGifsSpinningLoader
+  /// assets/gifs/spinning_loader.gif
+  static const String assetsGifsSpinningLoader = "assets/gifs/spinning_loader.gif";
 
   /// Assets for assetsSvgsFavicon
   /// assets/svgs/favicon.svg
@@ -26,3 +30,4 @@ class Assets {
   /// assets/svgs/search.svg
   static const String assetsSvgsSearch = "assets/svgs/search.svg";
 }
+

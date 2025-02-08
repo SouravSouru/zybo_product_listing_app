@@ -4,6 +4,7 @@ class Routes {
   static String login = "login";
   static String otp = "otp";
   static String registration = "registration";
+  static String search = "search";
 
   // ----------------------------------------------------
 
@@ -12,4 +13,5 @@ class Routes {
   static String getRegistrationRoute() => "/$registration";
   static String getLoginRoute() => "/$login";
   static String getMainRoute() => "/$main";
+  static String getSearchRoute() => "/$search";
 }

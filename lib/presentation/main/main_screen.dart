@@ -31,11 +31,7 @@ class MainScreen extends StatelessWidget {
           create: (context) =>
               ProfileBloc()..add(const ProfileEvent.fetchProfile()),
         ),
-        BlocProvider(
-          create: (context) =>locator.get<HomeblocBloc>()
-            ..add(const HomeblocEvent.fetchProductsData())
-            ..add(const HomeblocEvent.fetchBannersData()),
-        ),
+        
       ],
       child: BlocBuilder<BottomNavigationBloc, BottomNavigationState>(
         builder: (context, state) {

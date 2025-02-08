@@ -6,4 +6,5 @@ import '../../core/resources/data_state.dart';
 abstract class HomeRepository {
   Future<DataState<List<ProductModel>>> getProductsList();
   Future<DataState<List<BannerModel>>> getbanners();
+  Future<DataState<List<ProductModel>>> searchProduct({required String search});
 }

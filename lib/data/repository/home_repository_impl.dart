@@ -49,4 +49,25 @@ class HomeRepositoryImpl implements HomeRepository {
           type: e.type));
     }
   }
+
+  @override
+  Future<DataState<List<ProductModel>>> searchProduct(
+      {required String search}) async {
+    try {
+      final httpResponse = await _homeDatasource.searchProduct(query: search);
+      if (httpResponse.response.statusCode == 200) {
+        return DataSuccess(httpResponse.data);
+      } else {
+        return DataFailed(httpResponse.data);
+      }
+    } on DioException catch (e) {
+      return DataException(DioException(
+          requestOptions: e.requestOptions,
+          error: e.error,
+          message: e.message,
+          response: e.response,
+          stackTrace: e.stackTrace,
+          type: e.type));
+    }
+  }
 }

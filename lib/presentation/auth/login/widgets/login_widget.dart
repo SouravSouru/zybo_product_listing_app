@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/core/utilities/enums/enums.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 import '../../../../bloc/auth/auth_bloc.dart';
@@ -54,12 +55,17 @@ class LoginWidget extends StatelessWidget {
             const SizedBox(height: 40),
             const PhoneNumberTextField(),
             const SizedBox(height: 24),
-            AppElevatedButton(
-              text: "Continue",
-              onPressed: () {
-                context
-                    .read<AuthBloc>()
-                    .add(const AuthEvent.verifyPhonenumber());
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                return AppElevatedButton(
+                  text: "Continue",
+                  isLoading: state.loadingButtons == LoadingButtons.verifyPhone,
+                  onPressed: () {
+                    context
+                        .read<AuthBloc>()
+                        .add(const AuthEvent.verifyPhonenumber());
+                  },
+                );
               },
             ),
             const SizedBox(height: 16),

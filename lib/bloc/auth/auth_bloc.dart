@@ -4,6 +4,7 @@ import 'package:zybo_machine_test/data/models/login_model/login_model.dart';
 import 'package:zybo_machine_test/bloc/auth/bloc%20logic/verify_phonnumber.dart';
 import 'package:zybo_machine_test/bloc/auth/bloc%20logic/verify_otp.dart';
 import 'package:zybo_machine_test/bloc/auth/bloc%20logic/register_account.dart';
+import '../../core/utilities/enums/enums.dart';
 import '../../data/models/register/register.dart';
 
 part 'auth_event.dart';

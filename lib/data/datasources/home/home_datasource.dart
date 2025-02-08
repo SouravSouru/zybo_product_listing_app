@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:zybo_machine_test/data/models/banner_model/banner_model.dart';
-import 'package:zybo_machine_test/data/models/login_model/login_model.dart';
 import 'package:zybo_machine_test/data/models/product_model/product.dart';
 
 import '../../../core/network/api_end_points.dart';
@@ -17,4 +16,8 @@ abstract class HomeDataSource {
 
   @GET(ApiEndPoints.banners)
   Future<HttpResponse<List<BannerModel>>> getBanners();
+
+  @POST(ApiEndPoints.search)
+  Future<HttpResponse<List<ProductModel>>> searchProduct(
+      {@Field() required String query});
 }

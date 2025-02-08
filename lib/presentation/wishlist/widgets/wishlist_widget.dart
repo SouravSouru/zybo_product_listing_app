@@ -27,18 +27,15 @@ class WishlistWidget extends StatelessWidget {
         const SizedBox(height: 26),
         BlocBuilder<WishlistBloc, WishlistState>(
           builder: (context, state) {
-            if (state.wishlists.isEmpty) {
-              return Builder(builder: (context) {
-                return const Expanded(
-                  child: Center(
-                    child: Text(
-                      'No WishList',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
+            if (state.wishlists.isEmpty && state.isLoading == false) {
+              return const Expanded(
+                child: Center(
+                  child: Text(
+                    'No WishList',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                );
-              });
+                ),
+              );
             }
 
             if (state.isLoading) {

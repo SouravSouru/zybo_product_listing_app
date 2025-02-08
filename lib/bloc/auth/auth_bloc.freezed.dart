@@ -422,6 +422,7 @@ mixin _$AuthState {
   Register? get registerResponse => throw _privateConstructorUsedError;
   bool get isOtpVerified => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  LoadingButtons get loadingButtons => throw _privateConstructorUsedError;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -440,7 +441,8 @@ abstract class $AuthStateCopyWith<$Res> {
       String? errorMessage,
       Register? registerResponse,
       bool isOtpVerified,
-      bool isLoading});
+      bool isLoading,
+      LoadingButtons loadingButtons});
 }
 
 /// @nodoc
@@ -463,6 +465,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? registerResponse = freezed,
     Object? isOtpVerified = null,
     Object? isLoading = null,
+    Object? loadingButtons = null,
   }) {
     return _then(_value.copyWith(
       loginResponse: freezed == loginResponse
@@ -485,6 +488,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      loadingButtons: null == loadingButtons
+          ? _value.loadingButtons
+          : loadingButtons // ignore: cast_nullable_to_non_nullable
+              as LoadingButtons,
     ) as $Val);
   }
 }
@@ -502,7 +509,8 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       String? errorMessage,
       Register? registerResponse,
       bool isOtpVerified,
-      bool isLoading});
+      bool isLoading,
+      LoadingButtons loadingButtons});
 }
 
 /// @nodoc
@@ -523,6 +531,7 @@ class __$$AuthStateImplCopyWithImpl<$Res>
     Object? registerResponse = freezed,
     Object? isOtpVerified = null,
     Object? isLoading = null,
+    Object? loadingButtons = null,
   }) {
     return _then(_$AuthStateImpl(
       loginResponse: freezed == loginResponse
@@ -545,6 +554,10 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      loadingButtons: null == loadingButtons
+          ? _value.loadingButtons
+          : loadingButtons // ignore: cast_nullable_to_non_nullable
+              as LoadingButtons,
     ));
   }
 }
@@ -557,7 +570,8 @@ class _$AuthStateImpl implements _AuthState {
       this.errorMessage,
       this.registerResponse,
       required this.isOtpVerified,
-      required this.isLoading});
+      required this.isLoading,
+      required this.loadingButtons});
 
   @override
   final LoginModel? loginResponse;
@@ -569,10 +583,12 @@ class _$AuthStateImpl implements _AuthState {
   final bool isOtpVerified;
   @override
   final bool isLoading;
+  @override
+  final LoadingButtons loadingButtons;
 
   @override
   String toString() {
-    return 'AuthState(loginResponse: $loginResponse, errorMessage: $errorMessage, registerResponse: $registerResponse, isOtpVerified: $isOtpVerified, isLoading: $isLoading)';
+    return 'AuthState(loginResponse: $loginResponse, errorMessage: $errorMessage, registerResponse: $registerResponse, isOtpVerified: $isOtpVerified, isLoading: $isLoading, loadingButtons: $loadingButtons)';
   }
 
   @override
@@ -589,12 +605,14 @@ class _$AuthStateImpl implements _AuthState {
             (identical(other.isOtpVerified, isOtpVerified) ||
                 other.isOtpVerified == isOtpVerified) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.loadingButtons, loadingButtons) ||
+                other.loadingButtons == loadingButtons));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, loginResponse, errorMessage,
-      registerResponse, isOtpVerified, isLoading);
+      registerResponse, isOtpVerified, isLoading, loadingButtons);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -611,7 +629,8 @@ abstract class _AuthState implements AuthState {
       final String? errorMessage,
       final Register? registerResponse,
       required final bool isOtpVerified,
-      required final bool isLoading}) = _$AuthStateImpl;
+      required final bool isLoading,
+      required final LoadingButtons loadingButtons}) = _$AuthStateImpl;
 
   @override
   LoginModel? get loginResponse;
@@ -623,6 +642,8 @@ abstract class _AuthState implements AuthState {
   bool get isOtpVerified;
   @override
   bool get isLoading;
+  @override
+  LoadingButtons get loadingButtons;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.

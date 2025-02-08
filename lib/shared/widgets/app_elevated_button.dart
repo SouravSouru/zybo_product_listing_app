@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:zybo_machine_test/core/generated/generated_assets.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color? color;
+  final bool? isLoading;
 
-  const AppElevatedButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
-    this.color,
-  });
+  const AppElevatedButton(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      this.color,
+      this.isLoading = false});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,12 @@ class AppElevatedButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 18, color: Colors.white),
-        ),
+        child: (isLoading ?? false)
+            ? Image.asset(Assets.assetsGifsSpinningLoader)
+            : Text(
+                text,
+                style: const TextStyle(fontSize: 18, color: Colors.white),
+              ),
       ),
     );
   }

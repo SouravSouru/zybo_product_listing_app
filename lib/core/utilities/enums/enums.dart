@@ -6,3 +6,5 @@ enum ErrorType {
 }
 
 enum SuccesType { validation, api }
+
+enum LoadingButtons { verifyPhone, verifyOtp, register, none }

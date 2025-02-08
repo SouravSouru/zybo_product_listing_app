@@ -8,4 +8,5 @@ class ApiEndPoints {
   static const profile = 'user-data/';
   static const wishlist = 'wishlist/';
   static const updateWishlist = 'add-remove-wishlist/';
+  static const search = 'search/';
 }

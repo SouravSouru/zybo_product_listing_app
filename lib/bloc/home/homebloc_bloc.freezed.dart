@@ -20,18 +20,21 @@ mixin _$HomeblocEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchProductsData,
     required TResult Function() fetchBannersData,
+    required TResult Function() searchProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchProductsData,
     TResult? Function()? fetchBannersData,
+    TResult? Function()? searchProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchProductsData,
     TResult Function()? fetchBannersData,
+    TResult Function()? searchProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeblocEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchProductsData value) fetchProductsData,
     required TResult Function(_FetchBannersData value) fetchBannersData,
+    required TResult Function(_SearchProduct value) searchProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchProductsData value)? fetchProductsData,
     TResult? Function(_FetchBannersData value)? fetchBannersData,
+    TResult? Function(_SearchProduct value)? searchProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchProductsData value)? fetchProductsData,
     TResult Function(_FetchBannersData value)? fetchBannersData,
+    TResult Function(_SearchProduct value)? searchProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +126,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchProductsData,
     required TResult Function() fetchBannersData,
+    required TResult Function() searchProduct,
   }) {
     return fetchProductsData();
   }
@@ -129,6 +136,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchProductsData,
     TResult? Function()? fetchBannersData,
+    TResult? Function()? searchProduct,
   }) {
     return fetchProductsData?.call();
   }
@@ -138,6 +146,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchProductsData,
     TResult Function()? fetchBannersData,
+    TResult Function()? searchProduct,
     required TResult orElse(),
   }) {
     if (fetchProductsData != null) {
@@ -151,6 +160,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchProductsData value) fetchProductsData,
     required TResult Function(_FetchBannersData value) fetchBannersData,
+    required TResult Function(_SearchProduct value) searchProduct,
   }) {
     return fetchProductsData(this);
   }
@@ -160,6 +170,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchProductsData value)? fetchProductsData,
     TResult? Function(_FetchBannersData value)? fetchBannersData,
+    TResult? Function(_SearchProduct value)? searchProduct,
   }) {
     return fetchProductsData?.call(this);
   }
@@ -169,6 +180,7 @@ class _$FetchProductsDataImpl implements _FetchProductsData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchProductsData value)? fetchProductsData,
     TResult Function(_FetchBannersData value)? fetchBannersData,
+    TResult Function(_SearchProduct value)? searchProduct,
     required TResult orElse(),
   }) {
     if (fetchProductsData != null) {
@@ -225,6 +237,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult when<TResult extends Object?>({
     required TResult Function() fetchProductsData,
     required TResult Function() fetchBannersData,
+    required TResult Function() searchProduct,
   }) {
     return fetchBannersData();
   }
@@ -234,6 +247,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetchProductsData,
     TResult? Function()? fetchBannersData,
+    TResult? Function()? searchProduct,
   }) {
     return fetchBannersData?.call();
   }
@@ -243,6 +257,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchProductsData,
     TResult Function()? fetchBannersData,
+    TResult Function()? searchProduct,
     required TResult orElse(),
   }) {
     if (fetchBannersData != null) {
@@ -256,6 +271,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchProductsData value) fetchProductsData,
     required TResult Function(_FetchBannersData value) fetchBannersData,
+    required TResult Function(_SearchProduct value) searchProduct,
   }) {
     return fetchBannersData(this);
   }
@@ -265,6 +281,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchProductsData value)? fetchProductsData,
     TResult? Function(_FetchBannersData value)? fetchBannersData,
+    TResult? Function(_SearchProduct value)? searchProduct,
   }) {
     return fetchBannersData?.call(this);
   }
@@ -274,6 +291,7 @@ class _$FetchBannersDataImpl implements _FetchBannersData {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchProductsData value)? fetchProductsData,
     TResult Function(_FetchBannersData value)? fetchBannersData,
+    TResult Function(_SearchProduct value)? searchProduct,
     required TResult orElse(),
   }) {
     if (fetchBannersData != null) {
@@ -288,11 +306,125 @@ abstract class _FetchBannersData implements HomeblocEvent {
 }
 
 /// @nodoc
+abstract class _$$SearchProductImplCopyWith<$Res> {
+  factory _$$SearchProductImplCopyWith(
+          _$SearchProductImpl value, $Res Function(_$SearchProductImpl) then) =
+      __$$SearchProductImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SearchProductImplCopyWithImpl<$Res>
+    extends _$HomeblocEventCopyWithImpl<$Res, _$SearchProductImpl>
+    implements _$$SearchProductImplCopyWith<$Res> {
+  __$$SearchProductImplCopyWithImpl(
+      _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HomeblocEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SearchProductImpl implements _SearchProduct {
+  const _$SearchProductImpl();
+
+  @override
+  String toString() {
+    return 'HomeblocEvent.searchProduct()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SearchProductImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetchProductsData,
+    required TResult Function() fetchBannersData,
+    required TResult Function() searchProduct,
+  }) {
+    return searchProduct();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetchProductsData,
+    TResult? Function()? fetchBannersData,
+    TResult? Function()? searchProduct,
+  }) {
+    return searchProduct?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetchProductsData,
+    TResult Function()? fetchBannersData,
+    TResult Function()? searchProduct,
+    required TResult orElse(),
+  }) {
+    if (searchProduct != null) {
+      return searchProduct();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchProductsData value) fetchProductsData,
+    required TResult Function(_FetchBannersData value) fetchBannersData,
+    required TResult Function(_SearchProduct value) searchProduct,
+  }) {
+    return searchProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchProductsData value)? fetchProductsData,
+    TResult? Function(_FetchBannersData value)? fetchBannersData,
+    TResult? Function(_SearchProduct value)? searchProduct,
+  }) {
+    return searchProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchProductsData value)? fetchProductsData,
+    TResult Function(_FetchBannersData value)? fetchBannersData,
+    TResult Function(_SearchProduct value)? searchProduct,
+    required TResult orElse(),
+  }) {
+    if (searchProduct != null) {
+      return searchProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchProduct implements HomeblocEvent {
+  const factory _SearchProduct() = _$SearchProductImpl;
+}
+
+/// @nodoc
 mixin _$HomeblocState {
   List<ProductModel>? get productsList => throw _privateConstructorUsedError;
+  List<ProductModel> get searchProductList =>
+      throw _privateConstructorUsedError;
   List<BannerModel>? get bannersList => throw _privateConstructorUsedError;
   bool get isProductsListLoading => throw _privateConstructorUsedError;
   bool get isBannersListLoading => throw _privateConstructorUsedError;
+  bool get isSearchLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeblocState
@@ -310,9 +442,11 @@ abstract class $HomeblocStateCopyWith<$Res> {
   @useResult
   $Res call(
       {List<ProductModel>? productsList,
+      List<ProductModel> searchProductList,
       List<BannerModel>? bannersList,
       bool isProductsListLoading,
       bool isBannersListLoading,
+      bool isSearchLoading,
       bool isError});
 }
 
@@ -332,9 +466,11 @@ class _$HomeblocStateCopyWithImpl<$Res, $Val extends HomeblocState>
   @override
   $Res call({
     Object? productsList = freezed,
+    Object? searchProductList = null,
     Object? bannersList = freezed,
     Object? isProductsListLoading = null,
     Object? isBannersListLoading = null,
+    Object? isSearchLoading = null,
     Object? isError = null,
   }) {
     return _then(_value.copyWith(
@@ -342,6 +478,10 @@ class _$HomeblocStateCopyWithImpl<$Res, $Val extends HomeblocState>
           ? _value.productsList
           : productsList // ignore: cast_nullable_to_non_nullable
               as List<ProductModel>?,
+      searchProductList: null == searchProductList
+          ? _value.searchProductList
+          : searchProductList // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
       bannersList: freezed == bannersList
           ? _value.bannersList
           : bannersList // ignore: cast_nullable_to_non_nullable
@@ -353,6 +493,10 @@ class _$HomeblocStateCopyWithImpl<$Res, $Val extends HomeblocState>
       isBannersListLoading: null == isBannersListLoading
           ? _value.isBannersListLoading
           : isBannersListLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSearchLoading: null == isSearchLoading
+          ? _value.isSearchLoading
+          : isSearchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: null == isError
           ? _value.isError
@@ -372,9 +516,11 @@ abstract class _$$HomeblocStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {List<ProductModel>? productsList,
+      List<ProductModel> searchProductList,
       List<BannerModel>? bannersList,
       bool isProductsListLoading,
       bool isBannersListLoading,
+      bool isSearchLoading,
       bool isError});
 }
 
@@ -392,9 +538,11 @@ class __$$HomeblocStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? productsList = freezed,
+    Object? searchProductList = null,
     Object? bannersList = freezed,
     Object? isProductsListLoading = null,
     Object? isBannersListLoading = null,
+    Object? isSearchLoading = null,
     Object? isError = null,
   }) {
     return _then(_$HomeblocStateImpl(
@@ -402,6 +550,10 @@ class __$$HomeblocStateImplCopyWithImpl<$Res>
           ? _value._productsList
           : productsList // ignore: cast_nullable_to_non_nullable
               as List<ProductModel>?,
+      searchProductList: null == searchProductList
+          ? _value._searchProductList
+          : searchProductList // ignore: cast_nullable_to_non_nullable
+              as List<ProductModel>,
       bannersList: freezed == bannersList
           ? _value._bannersList
           : bannersList // ignore: cast_nullable_to_non_nullable
@@ -413,6 +565,10 @@ class __$$HomeblocStateImplCopyWithImpl<$Res>
       isBannersListLoading: null == isBannersListLoading
           ? _value.isBannersListLoading
           : isBannersListLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSearchLoading: null == isSearchLoading
+          ? _value.isSearchLoading
+          : isSearchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: null == isError
           ? _value.isError
@@ -427,11 +583,14 @@ class __$$HomeblocStateImplCopyWithImpl<$Res>
 class _$HomeblocStateImpl implements _HomeblocState {
   const _$HomeblocStateImpl(
       {final List<ProductModel>? productsList,
+      required final List<ProductModel> searchProductList,
       final List<BannerModel>? bannersList,
       required this.isProductsListLoading,
       required this.isBannersListLoading,
+      required this.isSearchLoading,
       required this.isError})
       : _productsList = productsList,
+        _searchProductList = searchProductList,
         _bannersList = bannersList;
 
   final List<ProductModel>? _productsList;
@@ -442,6 +601,15 @@ class _$HomeblocStateImpl implements _HomeblocState {
     if (_productsList is EqualUnmodifiableListView) return _productsList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
+  }
+
+  final List<ProductModel> _searchProductList;
+  @override
+  List<ProductModel> get searchProductList {
+    if (_searchProductList is EqualUnmodifiableListView)
+      return _searchProductList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_searchProductList);
   }
 
   final List<BannerModel>? _bannersList;
@@ -459,11 +627,13 @@ class _$HomeblocStateImpl implements _HomeblocState {
   @override
   final bool isBannersListLoading;
   @override
+  final bool isSearchLoading;
+  @override
   final bool isError;
 
   @override
   String toString() {
-    return 'HomeblocState(productsList: $productsList, bannersList: $bannersList, isProductsListLoading: $isProductsListLoading, isBannersListLoading: $isBannersListLoading, isError: $isError)';
+    return 'HomeblocState(productsList: $productsList, searchProductList: $searchProductList, bannersList: $bannersList, isProductsListLoading: $isProductsListLoading, isBannersListLoading: $isBannersListLoading, isSearchLoading: $isSearchLoading, isError: $isError)';
   }
 
   @override
@@ -474,11 +644,15 @@ class _$HomeblocStateImpl implements _HomeblocState {
             const DeepCollectionEquality()
                 .equals(other._productsList, _productsList) &&
             const DeepCollectionEquality()
+                .equals(other._searchProductList, _searchProductList) &&
+            const DeepCollectionEquality()
                 .equals(other._bannersList, _bannersList) &&
             (identical(other.isProductsListLoading, isProductsListLoading) ||
                 other.isProductsListLoading == isProductsListLoading) &&
             (identical(other.isBannersListLoading, isBannersListLoading) ||
                 other.isBannersListLoading == isBannersListLoading) &&
+            (identical(other.isSearchLoading, isSearchLoading) ||
+                other.isSearchLoading == isSearchLoading) &&
             (identical(other.isError, isError) || other.isError == isError));
   }
 
@@ -486,9 +660,11 @@ class _$HomeblocStateImpl implements _HomeblocState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_productsList),
+      const DeepCollectionEquality().hash(_searchProductList),
       const DeepCollectionEquality().hash(_bannersList),
       isProductsListLoading,
       isBannersListLoading,
+      isSearchLoading,
       isError);
 
   /// Create a copy of HomeblocState
@@ -503,19 +679,25 @@ class _$HomeblocStateImpl implements _HomeblocState {
 abstract class _HomeblocState implements HomeblocState {
   const factory _HomeblocState(
       {final List<ProductModel>? productsList,
+      required final List<ProductModel> searchProductList,
       final List<BannerModel>? bannersList,
       required final bool isProductsListLoading,
       required final bool isBannersListLoading,
+      required final bool isSearchLoading,
       required final bool isError}) = _$HomeblocStateImpl;
 
   @override
   List<ProductModel>? get productsList;
+  @override
+  List<ProductModel> get searchProductList;
   @override
   List<BannerModel>? get bannersList;
   @override
   bool get isProductsListLoading;
   @override
   bool get isBannersListLoading;
+  @override
+  bool get isSearchLoading;
   @override
   bool get isError;
 

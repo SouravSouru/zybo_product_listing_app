@@ -10,3 +10,11 @@ class AuthenticationControllers {
     name.clear();
   }
 }
+
+class HomeControllers {
+  static TextEditingController search = TextEditingController();
+
+  static clear() {
+    search.clear();
+  }
+}

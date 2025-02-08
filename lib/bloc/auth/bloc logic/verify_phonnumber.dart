@@ -2,11 +2,9 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:zybo_machine_test/bloc/auth/auth_bloc.dart';
-
 import '../../../core/resources/data_state.dart';
 import '../../../core/utilities/controllers/controllers.dart';
 import '../../../core/utilities/enums/enums.dart';
-import '../../../data/models/result/result.dart';
 import '../../../domain/repository/authentication_repository.dart';
 import '../../../injection/service_locator.dart';
 
@@ -28,7 +26,7 @@ extension VerifyPhonenumberLogic on AuthBloc {
           .get<AuthenticationRepository>()
           .verifyPhoneNumber(
               number: AuthenticationControllers.phoneNumber.text);
-      emit(state.copyWith(isLoading: true));
+      emit(state.copyWith(isLoading: true,loadingButtons: LoadingButtons.verifyPhone));
 
       if (datastate is DataSuccess) {
         emit(state.copyWith(
@@ -41,7 +39,7 @@ extension VerifyPhonenumberLogic on AuthBloc {
       errorMessage = 'someting went wrong';
     }
 
-    emit(state.copyWith(errorMessage: errorMessage, isLoading: false));
+    emit(state.copyWith(errorMessage: errorMessage, isLoading: false,loadingButtons: LoadingButtons.none));
     emit(state.copyWith(errorMessage: null));
   }
 }

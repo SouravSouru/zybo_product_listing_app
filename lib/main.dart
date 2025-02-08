@@ -5,6 +5,7 @@ import 'package:toastification/toastification.dart';
 import 'package:zybo_machine_test/bloc/bottom%20navigation/bottom_navigation_bloc.dart';
 import 'package:zybo_machine_test/core/network/api_client.dart';
 
+import 'bloc/home/homebloc_bloc.dart';
 import 'bloc/splash/splash_bloc.dart';
 import 'core/config/route/go_router.dart';
 import 'injection/service_locator.dart';
@@ -36,6 +37,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => BottomNavigationBloc(),
           ),
+          BlocProvider(
+          create: (context) =>locator.get<HomeblocBloc>()
+            ..add(const HomeblocEvent.fetchProductsData())
+            ..add(const HomeblocEvent.fetchBannersData()),
+        ),
         ],
         child: ToastificationWrapper(
           config: const ToastificationConfig(alignment: Alignment.topCenter),

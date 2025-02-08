@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:zybo_machine_test/core/config/route/route_constants.dart';
+import 'package:zybo_machine_test/bloc/home/homebloc_bloc.dart';
+import 'package:zybo_machine_test/core/utilities/controllers/controllers.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
+import 'package:zybo_machine_test/injection/service_locator.dart';
 
 import '../../../../core/generated/generated_assets.dart';
 
-class Searchbar extends StatelessWidget {
-  const Searchbar({
+class SearchField extends StatelessWidget {
+  const SearchField({
     super.key,
   });
 
@@ -30,9 +32,11 @@ class Searchbar extends StatelessWidget {
           ],
         ),
         child: TextField(
-          readOnly: true,
-          onTap: () {
-            context.push(Routes.getSearchRoute());
+          controller: HomeControllers.search,
+          onChanged: (v) {
+            locator
+                .get<HomeblocBloc>()
+                .add(const HomeblocEvent.searchProduct());
           },
           decoration: InputDecoration(
             hintText: " Search",
