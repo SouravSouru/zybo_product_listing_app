@@ -15,7 +15,7 @@ Future<void> setupLocator() async {
   // locator.registerFactory(() => AddCaseBloc(locator()));
 
   // Repository Register
-    locator.registerLazySingleton<HomeRepository>(
+  locator.registerLazySingleton<HomeRepository>(
       () => HomeRepositoryImpl(locator()));
 
   // Data source Register

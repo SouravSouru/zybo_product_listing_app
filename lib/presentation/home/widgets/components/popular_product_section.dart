@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zybo_machine_test/data/models/product_model/product.dart';
-import '../../../../bloc/bloc/homebloc_bloc.dart';
+import '../../../../bloc/home/homebloc_bloc.dart';
 import '../../../wishlist/widgets/components/product_card.dart';
+import 'shimmer_product_card.dart';
 
 class PopularProductSection extends StatelessWidget {
   const PopularProductSection({
@@ -28,13 +29,21 @@ class PopularProductSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-
-        // Popular Product Grid
-
         BlocBuilder<HomeblocBloc, HomeblocState>(
           builder: (context, state) {
-            if (state.isLoading) {
-              return const CircularProgressIndicator();
+            if (state.isProductsListLoading) {
+              return AlignedGridView.count(
+                physics: const ClampingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 24,
+                crossAxisCount: 2,
+                itemCount: 4,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return const ShimmerProductCard();
+                },
+              );
             }
             return AlignedGridView.count(
               physics: const ClampingScrollPhysics(),
