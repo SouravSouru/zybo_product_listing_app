@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/core/utilities/controllers/controllers.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 class NameTextFields extends StatelessWidget {
@@ -11,6 +12,7 @@ class NameTextFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: TextInputType.text,
+      controller: AuthenticationControllers.name,
       decoration: InputDecoration(
         hintText: "Enter Full Name",
         enabledBorder: UnderlineInputBorder(

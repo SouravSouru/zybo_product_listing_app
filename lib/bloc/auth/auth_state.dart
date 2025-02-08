@@ -5,6 +5,7 @@ class AuthState with _$AuthState {
   const factory AuthState({
     LoginModel? loginResponse,
     String? errorMessage,
+    Register? registerResponse,
     required bool isOtpVerified,
     required bool isLoading,
   }) = _AuthState;

@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:zybo_machine_test/core/resources/data_state.dart';
 import 'package:zybo_machine_test/data/datasources/auth/authentication_datasource.dart';
 import 'package:zybo_machine_test/data/models/login_model/login_model.dart';
+import 'package:zybo_machine_test/data/models/register/register.dart';
 import 'package:zybo_machine_test/domain/repository/authentication_repository.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
@@ -14,6 +15,28 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     try {
       final httpResponse = await _authenticationDataSource.verifyPhoneNumber(
           phone_number: number);
+      if (httpResponse.response.statusCode == 200) {
+        return DataSuccess(httpResponse.data);
+      } else {
+        return DataFailed(httpResponse.data);
+      }
+    } on DioException catch (e) {
+      return DataException(DioException(
+          requestOptions: e.requestOptions,
+          error: e.error,
+          message: e.message,
+          response: e.response,
+          stackTrace: e.stackTrace,
+          type: e.type));
+    }
+  }
+
+  @override
+  Future<DataState<Register>> register(
+      {required String number, required String name}) async {
+    try {
+      final httpResponse = await _authenticationDataSource.register(
+          phone_number: number, first_name: number);
       if (httpResponse.response.statusCode == 200) {
         return DataSuccess(httpResponse.data);
       } else {

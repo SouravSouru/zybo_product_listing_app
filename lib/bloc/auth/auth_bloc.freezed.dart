@@ -20,18 +20,21 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() verifyPhonenumber,
     required TResult Function() verifyOtp,
+    required TResult Function() registerAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? verifyPhonenumber,
     TResult? Function()? verifyOtp,
+    TResult? Function()? registerAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? verifyPhonenumber,
     TResult Function()? verifyOtp,
+    TResult Function()? registerAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(VerifyPhonenumber value) verifyPhonenumber,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(RegisterAccount value) registerAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(RegisterAccount value)? registerAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(RegisterAccount value)? registerAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +125,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult when<TResult extends Object?>({
     required TResult Function() verifyPhonenumber,
     required TResult Function() verifyOtp,
+    required TResult Function() registerAccount,
   }) {
     return verifyPhonenumber();
   }
@@ -128,6 +135,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? verifyPhonenumber,
     TResult? Function()? verifyOtp,
+    TResult? Function()? registerAccount,
   }) {
     return verifyPhonenumber?.call();
   }
@@ -137,6 +145,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? verifyPhonenumber,
     TResult Function()? verifyOtp,
+    TResult Function()? registerAccount,
     required TResult orElse(),
   }) {
     if (verifyPhonenumber != null) {
@@ -150,6 +159,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult map<TResult extends Object?>({
     required TResult Function(VerifyPhonenumber value) verifyPhonenumber,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(RegisterAccount value) registerAccount,
   }) {
     return verifyPhonenumber(this);
   }
@@ -159,6 +169,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(RegisterAccount value)? registerAccount,
   }) {
     return verifyPhonenumber?.call(this);
   }
@@ -168,6 +179,7 @@ class _$VerifyPhonenumberImpl implements VerifyPhonenumber {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(RegisterAccount value)? registerAccount,
     required TResult orElse(),
   }) {
     if (verifyPhonenumber != null) {
@@ -224,6 +236,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult when<TResult extends Object?>({
     required TResult Function() verifyPhonenumber,
     required TResult Function() verifyOtp,
+    required TResult Function() registerAccount,
   }) {
     return verifyOtp();
   }
@@ -233,6 +246,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? verifyPhonenumber,
     TResult? Function()? verifyOtp,
+    TResult? Function()? registerAccount,
   }) {
     return verifyOtp?.call();
   }
@@ -242,6 +256,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? verifyPhonenumber,
     TResult Function()? verifyOtp,
+    TResult Function()? registerAccount,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -255,6 +270,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult map<TResult extends Object?>({
     required TResult Function(VerifyPhonenumber value) verifyPhonenumber,
     required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(RegisterAccount value) registerAccount,
   }) {
     return verifyOtp(this);
   }
@@ -264,6 +280,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(RegisterAccount value)? registerAccount,
   }) {
     return verifyOtp?.call(this);
   }
@@ -273,6 +290,7 @@ class _$VerifyOtpImpl implements VerifyOtp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(VerifyPhonenumber value)? verifyPhonenumber,
     TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(RegisterAccount value)? registerAccount,
     required TResult orElse(),
   }) {
     if (verifyOtp != null) {
@@ -287,9 +305,121 @@ abstract class VerifyOtp implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$RegisterAccountImplCopyWith<$Res> {
+  factory _$$RegisterAccountImplCopyWith(_$RegisterAccountImpl value,
+          $Res Function(_$RegisterAccountImpl) then) =
+      __$$RegisterAccountImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RegisterAccountImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$RegisterAccountImpl>
+    implements _$$RegisterAccountImplCopyWith<$Res> {
+  __$$RegisterAccountImplCopyWithImpl(
+      _$RegisterAccountImpl _value, $Res Function(_$RegisterAccountImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$RegisterAccountImpl implements RegisterAccount {
+  const _$RegisterAccountImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.registerAccount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RegisterAccountImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() verifyPhonenumber,
+    required TResult Function() verifyOtp,
+    required TResult Function() registerAccount,
+  }) {
+    return registerAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? verifyPhonenumber,
+    TResult? Function()? verifyOtp,
+    TResult? Function()? registerAccount,
+  }) {
+    return registerAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? verifyPhonenumber,
+    TResult Function()? verifyOtp,
+    TResult Function()? registerAccount,
+    required TResult orElse(),
+  }) {
+    if (registerAccount != null) {
+      return registerAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(VerifyPhonenumber value) verifyPhonenumber,
+    required TResult Function(VerifyOtp value) verifyOtp,
+    required TResult Function(RegisterAccount value) registerAccount,
+  }) {
+    return registerAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(VerifyPhonenumber value)? verifyPhonenumber,
+    TResult? Function(VerifyOtp value)? verifyOtp,
+    TResult? Function(RegisterAccount value)? registerAccount,
+  }) {
+    return registerAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(VerifyPhonenumber value)? verifyPhonenumber,
+    TResult Function(VerifyOtp value)? verifyOtp,
+    TResult Function(RegisterAccount value)? registerAccount,
+    required TResult orElse(),
+  }) {
+    if (registerAccount != null) {
+      return registerAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RegisterAccount implements AuthEvent {
+  const factory RegisterAccount() = _$RegisterAccountImpl;
+}
+
+/// @nodoc
 mixin _$AuthState {
   LoginModel? get loginResponse => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
+  Register? get registerResponse => throw _privateConstructorUsedError;
   bool get isOtpVerified => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
@@ -308,6 +438,7 @@ abstract class $AuthStateCopyWith<$Res> {
   $Res call(
       {LoginModel? loginResponse,
       String? errorMessage,
+      Register? registerResponse,
       bool isOtpVerified,
       bool isLoading});
 }
@@ -329,6 +460,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   $Res call({
     Object? loginResponse = freezed,
     Object? errorMessage = freezed,
+    Object? registerResponse = freezed,
     Object? isOtpVerified = null,
     Object? isLoading = null,
   }) {
@@ -341,6 +473,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      registerResponse: freezed == registerResponse
+          ? _value.registerResponse
+          : registerResponse // ignore: cast_nullable_to_non_nullable
+              as Register?,
       isOtpVerified: null == isOtpVerified
           ? _value.isOtpVerified
           : isOtpVerified // ignore: cast_nullable_to_non_nullable
@@ -364,6 +500,7 @@ abstract class _$$AuthStateImplCopyWith<$Res>
   $Res call(
       {LoginModel? loginResponse,
       String? errorMessage,
+      Register? registerResponse,
       bool isOtpVerified,
       bool isLoading});
 }
@@ -383,6 +520,7 @@ class __$$AuthStateImplCopyWithImpl<$Res>
   $Res call({
     Object? loginResponse = freezed,
     Object? errorMessage = freezed,
+    Object? registerResponse = freezed,
     Object? isOtpVerified = null,
     Object? isLoading = null,
   }) {
@@ -395,6 +533,10 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      registerResponse: freezed == registerResponse
+          ? _value.registerResponse
+          : registerResponse // ignore: cast_nullable_to_non_nullable
+              as Register?,
       isOtpVerified: null == isOtpVerified
           ? _value.isOtpVerified
           : isOtpVerified // ignore: cast_nullable_to_non_nullable
@@ -413,6 +555,7 @@ class _$AuthStateImpl implements _AuthState {
   const _$AuthStateImpl(
       {this.loginResponse,
       this.errorMessage,
+      this.registerResponse,
       required this.isOtpVerified,
       required this.isLoading});
 
@@ -421,13 +564,15 @@ class _$AuthStateImpl implements _AuthState {
   @override
   final String? errorMessage;
   @override
+  final Register? registerResponse;
+  @override
   final bool isOtpVerified;
   @override
   final bool isLoading;
 
   @override
   String toString() {
-    return 'AuthState(loginResponse: $loginResponse, errorMessage: $errorMessage, isOtpVerified: $isOtpVerified, isLoading: $isLoading)';
+    return 'AuthState(loginResponse: $loginResponse, errorMessage: $errorMessage, registerResponse: $registerResponse, isOtpVerified: $isOtpVerified, isLoading: $isLoading)';
   }
 
   @override
@@ -439,6 +584,8 @@ class _$AuthStateImpl implements _AuthState {
                 other.loginResponse == loginResponse) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
+            (identical(other.registerResponse, registerResponse) ||
+                other.registerResponse == registerResponse) &&
             (identical(other.isOtpVerified, isOtpVerified) ||
                 other.isOtpVerified == isOtpVerified) &&
             (identical(other.isLoading, isLoading) ||
@@ -446,8 +593,8 @@ class _$AuthStateImpl implements _AuthState {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, loginResponse, errorMessage, isOtpVerified, isLoading);
+  int get hashCode => Object.hash(runtimeType, loginResponse, errorMessage,
+      registerResponse, isOtpVerified, isLoading);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
@@ -462,6 +609,7 @@ abstract class _AuthState implements AuthState {
   const factory _AuthState(
       {final LoginModel? loginResponse,
       final String? errorMessage,
+      final Register? registerResponse,
       required final bool isOtpVerified,
       required final bool isLoading}) = _$AuthStateImpl;
 
@@ -469,6 +617,8 @@ abstract class _AuthState implements AuthState {
   LoginModel? get loginResponse;
   @override
   String? get errorMessage;
+  @override
+  Register? get registerResponse;
   @override
   bool get isOtpVerified;
   @override
