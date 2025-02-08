@@ -36,4 +36,23 @@ go_router: A declarative, simple, and scalable way to handle navigation in Flutt
 hive_flutter: Used to store authentication tokens securely.
 
 
+## 📸 App Screenshots  
+
+### 🏠 Home Screen  
+![Home Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/home.png)
+
+### 🔍 Search Screen  
+![Search Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/search.png)
+
+### 🛒 Cart Screen  
+![Cart Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/cart.png)
+
+### 👤 Profile Screen  
+![Profile Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/profile.png)
+
+### ⚙️ Settings Screen  
+![Settings Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/settings.png)
+
+
+
 
