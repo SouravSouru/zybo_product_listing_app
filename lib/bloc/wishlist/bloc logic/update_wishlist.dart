@@ -18,6 +18,7 @@ extension UpdateWishListLogic on WishlistBloc {
 
       if (datastate is DataSuccess) {
         await fetchWishList(const WishlistEvent.fetchWishLists(), emit);
+      
         locator
             .get<HomeblocBloc>()
             .add(const HomeblocEvent.fetchProductsData());
