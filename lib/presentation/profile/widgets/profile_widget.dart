@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zybo_machine_test/presentation/profile/widgets/components/profile_info_tile.dart';
 
+import '../../../bloc/profile/profile_bloc.dart';
 import 'components/profile_header.dart';
 
 class ProfileWidget extends StatelessWidget {
@@ -10,17 +12,23 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ProfileHeader(title: "My Profile"),
-          SizedBox(height: 24),
-          ProfileInfoTile(label: "Name", value: "John Mathew"),
-          SizedBox(height: 16),
-          ProfileInfoTile(label: "Phone", value: "+91 9477575738"),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
+      child: BlocBuilder<ProfileBloc, ProfileState>(
+        builder: (context, state) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ProfileHeader(title: "My Profile"),
+              const SizedBox(height: 24),
+              ProfileInfoTile(
+                  label: "Name", value: state.profileData?.name ?? ""),
+              const SizedBox(height: 16),
+              ProfileInfoTile(
+                  label: "Phone", value: state.profileData?.phoneNumber ?? ""),
+            ],
+          );
+        },
       ),
     );
   }

@@ -36,7 +36,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       {required String number, required String name}) async {
     try {
       final httpResponse = await _authenticationDataSource.register(
-          phone_number: number, first_name: number);
+          phone_number: number, first_name: name);
       if (httpResponse.response.statusCode == 200) {
         return DataSuccess(httpResponse.data);
       } else {

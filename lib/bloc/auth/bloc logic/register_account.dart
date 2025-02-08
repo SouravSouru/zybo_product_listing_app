@@ -33,7 +33,7 @@ extension RegisterAccountLogic on AuthBloc {
           registerResponse: datastate.data,
         ));
         // storing auth token to hive
-        HiveDatabaseService.saveAuthToken(
+        await HiveDatabaseService.saveAuthToken(
             state.registerResponse?.token?.access ?? "");
 
         //  updating header for passing token
@@ -42,6 +42,7 @@ extension RegisterAccountLogic on AuthBloc {
           ...dio.options.headers,
           'Authorization': "Bearer ${HiveDatabaseService.getAuthToken()}",
         };
+        AuthenticationControllers.clear();
       } else {
         errorMessage = 'someting went wrong';
       }

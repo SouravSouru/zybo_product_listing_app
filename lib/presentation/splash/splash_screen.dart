@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zybo_machine_test/core/config/route/route_constants.dart';
 import 'package:zybo_machine_test/core/generated/generated_assets.dart';
+import 'package:zybo_machine_test/core/services/hive_database_service.dart';
 
 import '../../bloc/splash/splash_bloc.dart';
 
@@ -16,7 +17,11 @@ class SplashScreen extends StatelessWidget {
       body: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           if (state == const SplashState.completed()) {
-            context.go(Routes.getLoginRoute());
+            if (HiveDatabaseService.getAuthToken() != '') {
+              context.go(Routes.getMainRoute());
+            } else {
+              context.go(Routes.getLoginRoute());
+            }
           }
         },
         child: Center(
