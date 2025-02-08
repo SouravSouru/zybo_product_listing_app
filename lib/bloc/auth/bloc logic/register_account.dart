@@ -32,7 +32,7 @@ extension RegisterAccountLogic on AuthBloc {
       if (datastate is DataSuccess) {
         // storing auth token to hive
         await HiveDatabaseService.saveAuthToken(
-            state.registerResponse?.token?.access ?? "");
+            datastate.data?.token?.access ?? "");
 
         //  updating header for passing token
         final dio = locator<Dio>();

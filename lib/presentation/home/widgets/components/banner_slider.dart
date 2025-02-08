@@ -75,7 +75,7 @@ class BannerSlider extends StatelessWidget {
                         activeShape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0)),
                       ),
-                      dotsCount: banners.length,
+                      dotsCount: banners.isEmpty ? 2 : banners.length,
                       position: 1)),
             ],
           ),
