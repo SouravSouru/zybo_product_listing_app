@@ -3,4 +3,5 @@ class ApiEndPoints {
   static const auth = 'auth';
   static const productsList = 'products';
   static const banners = 'banners';
+  static const verify = 'verify/';
 }

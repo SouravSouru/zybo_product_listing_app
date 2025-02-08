@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:zybo_machine_test/bloc/auth/auth_bloc.dart';
+import 'package:zybo_machine_test/data/datasources/auth/authentication_datasource.dart';
 import 'package:zybo_machine_test/data/datasources/home/home_datasource.dart';
+import 'package:zybo_machine_test/data/repository/authentication_repository_impl.dart';
+import 'package:zybo_machine_test/domain/repository/authentication_repository.dart';
 
 import '../data/repository/home_repository_impl.dart';
 import '../domain/repository/home_repository.dart';
@@ -12,12 +16,16 @@ Future<void> setupLocator() async {
   locator.registerSingleton<Dio>(dio); // Register Dio instance
 
   //Bloc Register
-  // locator.registerFactory(() => AddCaseBloc(locator()));
+  locator.registerLazySingleton(() => AuthBloc());
 
   // Repository Register
   locator.registerLazySingleton<HomeRepository>(
       () => HomeRepositoryImpl(locator()));
+  locator.registerLazySingleton<AuthenticationRepository>(
+      () => AuthenticationRepositoryImpl(locator()));
 
   // Data source Register
   locator.registerSingleton<HomeDataSource>(HomeDataSource(locator()));
+  locator.registerSingleton<AuthenticationDataSource>(
+      AuthenticationDataSource(locator()));
 }

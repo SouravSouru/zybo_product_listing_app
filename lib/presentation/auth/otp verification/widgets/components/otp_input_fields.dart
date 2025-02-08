@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:zybo_machine_test/core/utilities/controllers/controllers.dart';
 
 class OtpInputFileds extends StatelessWidget {
   const OtpInputFileds({
@@ -11,6 +12,7 @@ class OtpInputFileds extends StatelessWidget {
     return Center(
       child: Pinput(
         length: 4,
+        controller: AuthenticationControllers.otp,
         mainAxisAlignment: MainAxisAlignment.center,
         keyboardType: TextInputType.number,
         defaultPinTheme: PinTheme(

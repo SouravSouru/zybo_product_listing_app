@@ -18,7 +18,7 @@ class RegistrationWidget extends StatelessWidget {
           const SizedBox(height: 10),
           AppBackButton(
             onPressed: () {
-              Navigator.pop(context);
+              context.pop();
             },
           ),
           const SizedBox(height: 40),

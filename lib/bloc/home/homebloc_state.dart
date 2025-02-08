@@ -9,6 +9,6 @@ class HomeblocState with _$HomeblocState {
     required bool isBannersListLoading,
     required bool isError,
   }) = _HomeblocState;
-  factory HomeblocState.initial() =>
-      const HomeblocState(isProductsListLoading: true, isError: false,isBannersListLoading:true);
+  factory HomeblocState.initial() => const HomeblocState(
+      isProductsListLoading: true, isError: false, isBannersListLoading: true);
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zybo_machine_test/core/utilities/controllers/controllers.dart';
 import 'package:zybo_machine_test/core/utilities/getters/get_colors.dart';
 
 class PhoneNumberTextField extends StatelessWidget {
@@ -40,6 +41,7 @@ class PhoneNumberTextField extends StatelessWidget {
         Expanded(
           child: TextField(
             keyboardType: TextInputType.phone,
+            controller: AuthenticationControllers.phoneNumber,
             decoration: InputDecoration(
               hintText: "Enter Phone",
               enabledBorder: UnderlineInputBorder(
