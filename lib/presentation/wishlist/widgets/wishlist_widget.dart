@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:zybo_machine_test/data/models/product_model/product.dart';
+import 'package:zybo_machine_test/presentation/home/widgets/components/shimmer_product_card.dart';
 
+import '../../../bloc/wishlist/wishlist_bloc.dart';
 import 'components/product_card.dart';
 
 class WishlistWidget extends StatelessWidget {
@@ -21,25 +25,60 @@ class WishlistWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 26),
-        Expanded(
-          child: AlignedGridView.count(
-            physics: const ClampingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 24,
-            crossAxisCount: 2,
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return const ProductCard(
-                imageUrl:
-                    "https://hips.hearstapps.com/hmg-prod/images/pasta-salad-horizontal-jpg-1522265695.jpg?crop=0.6668xw:1xh;center,top&resize=1200:*", // Replace with actual image URL
-                title: "Grain Peppers",
-                oldPrice: "₹800",
-                newPrice: "₹599",
-                rating: 4.5,
+        BlocBuilder<WishlistBloc, WishlistState>(
+          builder: (context, state) {
+            if (state.wishlists.isEmpty) {
+              return Builder(builder: (context) {
+                return const Expanded(
+                  child: Center(
+                    child: Text(
+                      'No WishList',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                );
+              });
+            }
+
+            if (state.isLoading) {
+              return Expanded(
+                child: AlignedGridView.count(
+                  physics: const ClampingScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 24,
+                  crossAxisCount: 2,
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return const ShimmerProductCard();
+                  },
+                ),
               );
-            },
-          ),
+            }
+            return Expanded(
+              child: AlignedGridView.count(
+                physics: const ClampingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 24,
+                crossAxisCount: 2,
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  final List<ProductModel> products = state.wishlists ?? [];
+                  final ProductModel? product = products[index];
+                  return ProductCard(
+                    imageUrl: product?.featuredImage ?? "",
+                    title: product?.name ?? "N/A",
+                    oldPrice: "₹${product?.mrp ?? 0}",
+                    newPrice: "₹${product?.salePrice ?? 0}",
+                    rating: product?.avgRating?.toDouble() ?? 0.0,
+                  );
+                },
+              ),
+            );
+          },
         ),
       ],
     );

@@ -4,10 +4,13 @@ import 'package:zybo_machine_test/bloc/auth/auth_bloc.dart';
 import 'package:zybo_machine_test/data/datasources/auth/authentication_datasource.dart';
 import 'package:zybo_machine_test/data/datasources/home/home_datasource.dart';
 import 'package:zybo_machine_test/data/datasources/profile/profile_datasource.dart';
+import 'package:zybo_machine_test/data/datasources/wishlist/wishlist_datasource.dart';
 import 'package:zybo_machine_test/data/repository/authentication_repository_impl.dart';
 import 'package:zybo_machine_test/data/repository/profile_repository_impl.dart';
+import 'package:zybo_machine_test/data/repository/wishlist_repository_impl.dart';
 import 'package:zybo_machine_test/domain/repository/authentication_repository.dart';
 import 'package:zybo_machine_test/domain/repository/profile_repository.dart';
+import 'package:zybo_machine_test/domain/repository/wishlist_repository.dart';
 
 import '../data/repository/home_repository_impl.dart';
 import '../domain/repository/home_repository.dart';
@@ -28,11 +31,13 @@ Future<void> setupLocator() async {
       () => AuthenticationRepositoryImpl(locator()));
   locator.registerLazySingleton<ProfileRepository>(
       () => ProfileRepositoryImpl(locator()));
+  locator.registerLazySingleton<WishlistRepository>(
+      () => WishlistRepositoryImpl(locator()));
 
   // Data source Register
   locator.registerSingleton<HomeDataSource>(HomeDataSource(locator()));
   locator.registerSingleton<AuthenticationDataSource>(
       AuthenticationDataSource(locator()));
-  locator.registerSingleton<ProfileDataSource>(
-      ProfileDataSource(locator()));
+  locator.registerSingleton<ProfileDataSource>(ProfileDataSource(locator()));
+  locator.registerSingleton<WishlistDatasource>(WishlistDatasource(locator()));
 }
