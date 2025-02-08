@@ -3,16 +3,18 @@ This project follows Clean Architecture, ensuring a well-structured, scalable, a
 
 
 # Project Structure
+```
+ lib/
+├── bloc/               # State management using BLoC
+├── core/               # Core utilities (theme, config, utilities, services)
+├── data/               # API calls, models, repositories
+├── domain/             # Business logic (repository interfaces)
+├── injection/          # Dependency injection (GetIt)
+├── presentation/       # UI layer (screens, widgets)
+├── shared/             # Shared widgets
+├── main.dart           # Entry point of the application
+```
 
-lib/
- ├── bloc/               # State management using BLoC
- ├── core/               # Core utilities (theme, config, utilities,services)
- ├── data/               # API calls, models, repositories
- ├── domain/             # Business logic (repository interfaces)
- ├── injection/          # Dependency injection (GetIt)
- ├── presentation/       # UI layer (screens, widgets)
- ├── shared/             # Shared widgets
- ├── main.dart           # Entry point of the application
 
 
 # State Management & Architecture
@@ -38,20 +40,31 @@ hive_flutter: Used to store authentication tokens securely.
 
 ## 📸 App Screenshots  
 
-### 🏠 Home Screen  
-![Home Screen]([https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/home.png](https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043241.png))
+###  Home Screen  
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043241.png" 
+     alt="Home Screen" width="300" height="600"/>
 
-### 🔍 Search Screen  
-![Search Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/search.png)
+### WishList 
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043248.png" 
+     alt="Home Screen" width="300" height="600"/>
 
-### 🛒 Cart Screen  
-![Cart Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/cart.png)
+### Profile
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043417.png" 
+     alt="Home Screen" width="300" height="600"/>
 
-### 👤 Profile Screen  
-![Profile Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/profile.png)
+### Splash
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043278.png" 
+     alt="Home Screen" width="300" height="600"/>
 
-### ⚙️ Settings Screen  
-![Settings Screen](https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/settings.png)
+### Login
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043379.png" 
+     alt="Home Screen" width="300" height="600"/>
+ ### OTP
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043399.png" 
+     alt="Home Screen" width="300" height="600"/>
+ ### Register
+<img src="https://github.com/SouravSouru/zybo_product_listing_app/blob/master/screenshots/Screenshot_1739043737.png" 
+     alt="Home Screen" width="300" height="600"/>
 
 
 
