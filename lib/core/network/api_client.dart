@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:zybo_machine_test/core/services/hive_database_service.dart';
 
 import '../../injection/service_locator.dart';
 
@@ -24,8 +25,8 @@ class ApiClient {
 
     dio.options.baseUrl = 'https://admin.kushinirestaurant.com/api/';
     dio.options.headers = {
-      // if (getUserData()?.authToken.isNotEmpty ?? false)
-      //   'Authorization': "Bearer ${getUserData()?.authToken ?? ""}",
+      if (HiveDatabaseService.getAuthToken() != '')
+        'Authorization': "Bearer ${HiveDatabaseService.getAuthToken()}",
     };
 
     return ApiService(dio);

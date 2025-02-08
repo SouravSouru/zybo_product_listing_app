@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:toastification/toastification.dart';
 import 'package:zybo_machine_test/bloc/bottom%20navigation/bottom_navigation_bloc.dart';
 import 'package:zybo_machine_test/core/network/api_client.dart';
@@ -11,6 +12,8 @@ import 'injection/service_locator.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
+  await Hive.initFlutter();
+  await Hive.openBox('settings');
 
   // API client initialization
   ApiClient.buildClient();

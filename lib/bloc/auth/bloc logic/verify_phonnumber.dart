@@ -15,17 +15,8 @@ extension VerifyPhonenumberLogic on AuthBloc {
     String? errorMessage;
     if (AuthenticationControllers.phoneNumber.text.isEmpty) {
       errorMessage = "Please enter the phone number";
-
-      // newResult = const Result(
-      //     errorType: ErrorType.validation,
-      //     isSuccess: false,
-      //     message: "Please enter the phone number");
     } else if (AuthenticationControllers.phoneNumber.text.length != 10) {
       errorMessage = "Please enter the valid phone number";
-      // newResult = const Result(
-      //     errorType: ErrorType.validation,
-      //     isSuccess: false,
-      //     message: "Please enter the valid phone number");
     }
     if (errorMessage != null) {
       emit(state.copyWith(errorMessage: errorMessage));
@@ -40,20 +31,6 @@ extension VerifyPhonenumberLogic on AuthBloc {
       emit(state.copyWith(isLoading: true));
 
       if (datastate is DataSuccess) {
-        // final analyticsService = GetIt.I.get<AnalyticsService>();
-        // analyticsService.logEvent(eventName: "user_login")
-
-        //  Hive user data storing
-        // final convertedData = convertUserModel(datastate.data);
-        // await locator.get<UserRepository>().addUserData(convertedData);
-
-        //  updating header for passing token
-        // final dio = locator<Dio>();
-        // dio.options.headers = {
-        //   ...dio.options.headers,
-        //   'Authorization': "Bearer ${getUserData()?.authToken ?? ""}",
-        // };
-
         emit(state.copyWith(
           loginResponse: datastate.data,
         ));
